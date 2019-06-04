@@ -8,7 +8,7 @@
     />
     <div class="post__content">
       <h2>
-        <a 
+        <a
           :href="post.link"
           :title="post.title.rendered"
           v-html="post.title.rendered"
@@ -85,7 +85,7 @@ export default {
 }
 
 @media (max-width: 680px) {
-  .post { 
+  .post {
     flex-flow: row wrap;
   }
   .post__featured-media {

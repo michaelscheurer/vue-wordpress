@@ -24,6 +24,8 @@ function vue_wordpress_setup()
 
 add_action( 'after_setup_theme', 'vue_wordpress_setup' );
 
+
+
 /**
  * Load scripts and styles
  */
@@ -71,6 +73,7 @@ new RADL( '__VUE_WORDPRESS__', 'vue_wordpress.js', array(
         'tags' => RADL::endpoint( 'tags' ),
         'users' => RADL::endpoint( 'users' ),
         'site' => RADL::callback( 'vue_wordpress_site' ),
+        'test' => RADL::callback( 'my_test_data' ),
     ),
 ) );
 
@@ -107,6 +110,11 @@ function vue_wordpress_routing()
     }
 
     return $routing;
+}
+
+function my_test_data () {
+    return apply_filters( 'wpml_active_languages', NULL, 'skip_missing=0&orderby=code' );
+    // return apply_filters( 'wpml_object_id', 1, 'category', true, 'fr');
 }
 
 function vue_wordpress_menus()

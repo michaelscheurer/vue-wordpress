@@ -14,5 +14,9 @@ export default {
   },
   SET_DOC_TITLE(state, title) {
     state.site.docTitle = title
+  },
+
+  setLanguage (state, language) {
+    state.language = language
   }
 }

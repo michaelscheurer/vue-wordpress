@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+global.store = store
+
 new Vue({
   el: '#vue-wordpress-app',
   render: h => h(App),

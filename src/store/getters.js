@@ -2,6 +2,11 @@ export default {
   menu: state => ({ name }) => {
     return state.menus[name]
   },
+
+  testData: state => () => {
+    return state.test
+  },
+
   request: state => ({ type, params }) => {
     return state[type].requests.find(req => {
       if (Object.keys(req.params).length === Object.keys(params).length) {
@@ -26,5 +31,9 @@ export default {
   },
   singleById: state => ({ type, id }) => {
     return state[type][id]
+  },
+
+  getActiveLanguage: (state, getters) => () => {
+    return state.language
   }
 }

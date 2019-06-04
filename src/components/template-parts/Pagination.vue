@@ -35,6 +35,7 @@ export default {
   data() {
     return {}
   },
+
   methods: {
     gotoPage(page) {
       if (! page || page > this.total) return

@@ -1,6 +1,5 @@
 import axios from 'axios'
 
-
 const { url } = __VUE_WORDPRESS__.routing
 
 const ajax = axios.create(
@@ -12,6 +11,8 @@ const ajax = axios.create(
     }
   }
 )
+
+global.ajax = ajax
 
 const batchRequest = {}
 

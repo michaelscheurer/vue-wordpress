@@ -8,6 +8,10 @@
       :title="item.title"
       v-html="item.content"
     ></a>
+
+    <div>
+      {{testData}}
+    </div>
   </nav>
 </template>
 
@@ -26,7 +30,11 @@ export default {
   computed: {
     menu() {
       return this.$store.getters.menu({ name: this.name })
+    },
+
+    testData () {
+      return this.$store.getters.testData()
     }
-  }
+  },
 }
 </script>
